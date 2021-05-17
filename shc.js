@@ -28,34 +28,53 @@ try {
 	const data = scannedQR.data;
 
 	// Convert the data to a JWT and extract its base64-encode payload
-	const payload = data
+	const jwt = data
 		.split("/")[1]
 		.match(/(..?)/g)
 		.map((number) => String.fromCharCode(parseInt(number, 10) + 45))
 		.join("")
-		.split(".")[1];
+		.split(".")
 
-	// Decode the payload
+	const header = jwt[0]
+	const payload = jwt[1]
+	const footer = jwt[2]
+
+	// let buffer = Buffer.from(header, "base64");
+
+	const extractedData = {
+		header: parseJwtHeader(header),
+		payload: parseJwtPayload(payload),
+		signature: footer
+	}
+
+	if (!fs.existsSync('./out')) {
+		fs.mkdirSync('./out');
+	}
+
+	const prettyJson = JSON.stringify(extractedData, null, 4)
+	const nanoId = nanoid(10);
+	fs.writeFile(`./out/${nanoId}.json`, prettyJson, (error) => {
+		if (error) {
+			console.log(error)
+		} else {
+			console.log(`JSON data was extracted to ./out/${nanoId}.json`);
+		}
+	});
+
+} catch (e) {
+	console.log(e.message)
+}
+
+function parseJwtHeader(header) {
+	const headerData = Buffer.from(header, "base64");
+	return JSON.parse(headerData)
+}
+
+function parseJwtPayload(payload) {
+
 	const buffer = Buffer.from(payload, "base64");
 
 	// Uncompress the payload and print the result
-	zlib.inflateRaw(buffer, (err, payload) => {
-		const nanoId = nanoid(10);
-
-		if (!fs.existsSync('./out')) {
-			fs.mkdirSync('./out');
-		}
-
-		const prettyJson = JSON.stringify(JSON.parse(payload), null, 4)
-
-		fs.writeFile(`./out/${nanoId}.json`, prettyJson, (error) => {
-			if (error) {
-				console.log(error)
-			} else {
-				console.log(`JSON data was extracted to ./out/${nanoId}.json`);
-			}
-		});
-	})
-} catch (e) {
-	console.log(e.message)
+	const payloadJson = zlib.inflateRawSync(buffer)
+	return JSON.parse(payloadJson);
 }

@@ -45,97 +45,105 @@ node shc.js './sample/sample-qr-code.png'
 
 ```json
 {
-    "iss": "https://smarthealth.cards/examples/issuer",
-    "nbf": 1620992383.218,
-    "vc": {
-        "@context": [
-            "https://www.w3.org/2018/credentials/v1"
-        ],
-        "type": [
-            "VerifiableCredential",
-            "https://smarthealth.cards#health-card",
-            "https://smarthealth.cards#immunization",
-            "https://smarthealth.cards#covid19"
-        ],
-        "credentialSubject": {
-            "fhirVersion": "4.0.1",
-            "fhirBundle": {
-                "resourceType": "Bundle",
-                "type": "collection",
-                "entry": [
-                    {
-                        "fullUrl": "resource:0",
-                        "resource": {
-                            "resourceType": "Patient",
-                            "name": [
-                                {
-                                    "family": "Anyperson",
-                                    "given": [
-                                        "John",
-                                        "B."
+    "header": {
+        "zip": "DEF",
+        "alg": "ES256",
+        "kid": "OBztBGRexV0me4ycPTBp-lAMWQmU1_OY1q8m4awW_34"
+    },
+    "payload": {
+        "iss": "https://smarthealth.cards/examples/issuer",
+        "nbf": 1620992383.218,
+        "vc": {
+            "@context": [
+                "https://www.w3.org/2018/credentials/v1"
+            ],
+            "type": [
+                "VerifiableCredential",
+                "https://smarthealth.cards#health-card",
+                "https://smarthealth.cards#immunization",
+                "https://smarthealth.cards#covid19"
+            ],
+            "credentialSubject": {
+                "fhirVersion": "4.0.1",
+                "fhirBundle": {
+                    "resourceType": "Bundle",
+                    "type": "collection",
+                    "entry": [
+                        {
+                            "fullUrl": "resource:0",
+                            "resource": {
+                                "resourceType": "Patient",
+                                "name": [
+                                    {
+                                        "family": "Anyperson",
+                                        "given": [
+                                            "John",
+                                            "B."
+                                        ]
+                                    }
+                                ],
+                                "birthDate": "1951-01-20"
+                            }
+                        },
+                        {
+                            "fullUrl": "resource:1",
+                            "resource": {
+                                "resourceType": "Immunization",
+                                "status": "completed",
+                                "vaccineCode": {
+                                    "coding": [
+                                        {
+                                            "system": "http://hl7.org/fhir/sid/cvx",
+                                            "code": "207"
+                                        }
                                     ]
-                                }
-                            ],
-                            "birthDate": "1951-01-20"
-                        }
-                    },
-                    {
-                        "fullUrl": "resource:1",
-                        "resource": {
-                            "resourceType": "Immunization",
-                            "status": "completed",
-                            "vaccineCode": {
-                                "coding": [
+                                },
+                                "patient": {
+                                    "reference": "resource:0"
+                                },
+                                "occurrenceDateTime": "2021-01-01",
+                                "performer": [
                                     {
-                                        "system": "http://hl7.org/fhir/sid/cvx",
-                                        "code": "207"
+                                        "actor": {
+                                            "display": "ABC General Hospital"
+                                        }
                                     }
-                                ]
-                            },
-                            "patient": {
-                                "reference": "resource:0"
-                            },
-                            "occurrenceDateTime": "2021-01-01",
-                            "performer": [
-                                {
-                                    "actor": {
-                                        "display": "ABC General Hospital"
-                                    }
-                                }
-                            ],
-                            "lotNumber": "0000001"
-                        }
-                    },
-                    {
-                        "fullUrl": "resource:2",
-                        "resource": {
-                            "resourceType": "Immunization",
-                            "status": "completed",
-                            "vaccineCode": {
-                                "coding": [
+                                ],
+                                "lotNumber": "0000001"
+                            }
+                        },
+                        {
+                            "fullUrl": "resource:2",
+                            "resource": {
+                                "resourceType": "Immunization",
+                                "status": "completed",
+                                "vaccineCode": {
+                                    "coding": [
+                                        {
+                                            "system": "http://hl7.org/fhir/sid/cvx",
+                                            "code": "207"
+                                        }
+                                    ]
+                                },
+                                "patient": {
+                                    "reference": "resource:0"
+                                },
+                                "occurrenceDateTime": "2021-01-29",
+                                "performer": [
                                     {
-                                        "system": "http://hl7.org/fhir/sid/cvx",
-                                        "code": "207"
+                                        "actor": {
+                                            "display": "ABC General Hospital"
+                                        }
                                     }
-                                ]
-                            },
-                            "patient": {
-                                "reference": "resource:0"
-                            },
-                            "occurrenceDateTime": "2021-01-29",
-                            "performer": [
-                                {
-                                    "actor": {
-                                        "display": "ABC General Hospital"
-                                    }
-                                }
-                            ],
-                            "lotNumber": "0000007"
+                                ],
+                                "lotNumber": "0000007"
+                            }
                         }
-                    }
-                ]
+                    ]
+                }
             }
         }
-    }
+    },
+    "signature": "RH5TVWB-aYrPnbtb2LXU9gpC1WRra0gQHjZxSE_htNScq8NdIdgoUt5C1kvdiXbYqD79W87si9x66fFCwmCmgw"
 }
 ```
