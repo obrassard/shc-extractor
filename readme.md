@@ -1,8 +1,12 @@
 # shc-extractor
 
-Extract the JSON payload from SHC QR code (i.e Québec Covid Vaccination QR Code)
+Extract the JSON payload from SHC QR Codes (i.e Québec COVID Vaccination QR Codes)
 
-> Note : This script doesn't perform any kind of private/public key verification of the provided QR code.
+### Introduction
+
+Dans les prochains jours/semaines, les québécois qui seront vaccinées pour la COVID-19 recevront le fameux code QR du gouvernement du Québec. Ces codes QR seront généré par un système appelé Smart Health Cards (https://smarthealth.cards), un protocole similaire à JWT (qui est un système de jetons généralement utilisé pour l'authentification d'APIs). En bref, et sans rentrer dans les details, toutes les données de vaccination nécessaires seront directement encodées en JSON dans le contenu du code QR et signées avec une clé secrète. Cela permettra aux authorités de valider l'authenticité des données d'un code QR sans qu'il soit nécessaire de conserver une copie sur le serveur des données relatives aux personnes vaccinées. Or, puisque les données sont disponible dans le payload du code QR, on est capable d'extraire ces données afin de les consulter.
+
+In the next few days/weeks, Quebecers who will get vaccinated will receive the famous QR code from the Quebec government. These QR codes will use a system called Smart Health Cards (https://smarthealth.cards), a protocol similar to JWT (which is a token system generally used for API authentication). In short, and without digging into the details, all the relevant vaccination data will be directly encoded as JSON in the QR code payload and signed with a secret key. This will allow authorities to verify the authenticity of a QR code payload without the need to keep a copy of the immunized persons' data on a server. Now, since the data is stored in the QR code payload, we are able to extract it. 
 
 ### Credits and inspiration :
 
@@ -12,6 +16,8 @@ Extract the JSON payload from SHC QR code (i.e Québec Covid Vaccination QR Code
 
 
 ## Usage 
+
+⚠️ **Warning : This script does not perform any type of private/public key verification of the provided QR code and therefore should not be considered as a means to validate a given SHC code.**
 
 ```
 git clone https://github.com/obrassard/shc-extractor.git
@@ -23,6 +29,8 @@ node shc.js '/path/to/the/qrcode.png'
 Where `'/path/to/the/qrcode.png'` is a path to the QR Code image (in PNG).
 
 The extracted JSON will be saved in `./out`
+
+---
 
 ### Sample data
 
