@@ -11,9 +11,7 @@ const jsQR = require('jsqr');
 const PNG = require('pngjs').PNG;
 const zlib = require("zlib");
 const fs = require("fs");
-const {
-	nanoid
-} = require("nanoid");
+const { nanoid } = require("nanoid");
 
 try {
 	const qrCodeFile = process.argv[2]
@@ -25,10 +23,9 @@ try {
 
 	// Extract the QR data
 	if (!scannedQR) throw new Error('Invalid QR code')
-	const data = scannedQR.data;
 
 	// Convert the data to a JWT and extract its base64-encode payload
-	const jwt = data
+	const jwt = scannedQR.data
 		.split("/")[1]
 		.match(/(..?)/g)
 		.map((number) => String.fromCharCode(parseInt(number, 10) + 45))
@@ -38,8 +35,6 @@ try {
 	const header = jwt[0]
 	const payload = jwt[1]
 	const footer = jwt[2]
-
-	// let buffer = Buffer.from(header, "base64");
 
 	const extractedData = {
 		header: parseJwtHeader(header),
