@@ -17,8 +17,6 @@ In the next few days/weeks, Quebecers who will get vaccinated will receive the f
 
 ## Usage 
 
-⚠️ **Warning : This script does not perform any type of private/public key verification of the provided QR code and therefore should not be considered as a means to validate a given SHC code.**
-
 ```
 git clone https://github.com/obrassard/shc-extractor.git
 cd shc-extractor
@@ -48,17 +46,13 @@ node shc.js './sample/sample-qr-code.png'
     "header": {
         "zip": "DEF",
         "alg": "ES256",
-        "kid": "OBztBGRexV0me4ycPTBp-lAMWQmU1_OY1q8m4awW_34"
+        "kid": "3Kfdg-XwP-7gXyywtUfUADwBumDOPKMQx-iELL11W9s"
     },
     "payload": {
         "iss": "https://smarthealth.cards/examples/issuer",
-        "nbf": 1620992383.218,
+        "nbf": 1620847989.837,
         "vc": {
-            "@context": [
-                "https://www.w3.org/2018/credentials/v1"
-            ],
             "type": [
-                "VerifiableCredential",
                 "https://smarthealth.cards#health-card",
                 "https://smarthealth.cards#immunization",
                 "https://smarthealth.cards#covid19"
@@ -144,6 +138,9 @@ node shc.js './sample/sample-qr-code.png'
             }
         }
     },
-    "signature": "RH5TVWB-aYrPnbtb2LXU9gpC1WRra0gQHjZxSE_htNScq8NdIdgoUt5C1kvdiXbYqD79W87si9x66fFCwmCmgw"
+    "verifications": {
+        "trustable": true,
+        "verifiedBy": "3Kfdg-XwP-7gXyywtUfUADwBumDOPKMQx-iELL11W9s"
+    }
 }
 ```

@@ -15,10 +15,10 @@ const server = express();
 server.use(express.urlencoded({extended: true}));
 server.use(express.json())
 
-server.post('/', function(req, res){
+server.post('/', async (req, res) => {
     const shcRawData = req.body.raw;
     if (shcRawData) {
-        const parsedData = parseShc(shcRawData);
+        const parsedData = await parseShc(shcRawData);
         res.json(parsedData);
     } else {
         res.status(400).send('400 Bad Request');

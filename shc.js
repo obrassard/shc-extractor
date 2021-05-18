@@ -1,4 +1,4 @@
-// Extract JSON payload from SHC QR code (without any kind of private/public key verification)
+// Extract JSON payload from SHC QR code
 
 // Credits + inspiration
 // https://github.com/dvci/health-cards-walkthrough/blob/main/SMART%20Health%20Cards.ipynb
@@ -16,20 +16,20 @@ try {
 	if (!qrCodeFilePath) throw new Error('Please provide the file path to the PNG QR code to decode')
 
 	const qrCodeData = readQrCode(fs.readFileSync(qrCodeFilePath));
-	const extractedData = parseShc(qrCodeData);
-
-	if (!fs.existsSync('./out')) {
-		fs.mkdirSync('./out');
-	}
-
-	const prettyJson = JSON.stringify(extractedData, null, 4)
-	const nanoId = nanoid(10);
-	fs.writeFile(`./out/${nanoId}.json`, prettyJson, (error) => {
-		if (error) {
-			console.log(error)
-		} else {
-			console.log(`JSON data was extracted to ./out/${nanoId}.json`);
+	parseShc(qrCodeData).then(extractedData => {
+		if (!fs.existsSync('./out')) {
+			fs.mkdirSync('./out');
 		}
+	
+		const prettyJson = JSON.stringify(extractedData, null, 4)
+		const nanoId = nanoid(10);
+		fs.writeFile(`./out/${nanoId}.json`, prettyJson, (error) => {
+			if (error) {
+				console.log(error)
+			} else {
+				console.log(`JSON data was extracted to ./out/${nanoId}.json`);
+			}
+		});
 	});
 
 } catch (e) {
