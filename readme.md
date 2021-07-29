@@ -29,6 +29,15 @@ Where `'/path/to/the/qrcode.png'` is a path to the QR Code image (in PNG).
 The extracted JSON will be saved in `./out`
 
 ---
+### ⚠️ Disclaimer
+
+**This project, for the moment, is not intended to be a tool to validate the trustworthiness of Quebec Gov. QR codes.**
+
+Indeed, according to the Smart Health Cards standard, the public keys required to validate the trustworthiness of the data should be published at `{issuer}/.well-known/jwks.json` (with `{issuer}` corresponding to the `iss` field in the payload). However, it seems that the government has not published those keys, probably to avoid that anybody starts validating QR codes.
+
+Knowing this, **it is not an issue** that the server returns `"trustable": false` for QC QR codes since we can't get the keys, we cannot ensure the QR code's data is trustable.
+
+---
 
 ### Sample data
 
