@@ -9,6 +9,9 @@
   "author": "Olivier Brassard",
   "repository": "https://github.com/obrassard/shc-extractor",
   "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
