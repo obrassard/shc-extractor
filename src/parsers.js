@@ -45,8 +45,12 @@ const parseShc = async (rawSHC) => {
  * @return {string} The encoded JWT  
  */
 function numericShcToJwt(rawSHC) {
+
+	if (rawSHC.startsWith('shc:/')) {
+		rawSHC = rawSHC.split('/')[1];
+	}
+
 	return rawSHC
-		.split("/")[1]
 		.match(/(..?)/g)
 		.map((number) => String.fromCharCode(parseInt(number, 10) + 45))
 		.join("")

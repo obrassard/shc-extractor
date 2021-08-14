@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+
+        html {
+            font-size: 17px;
+        }
+        * {
+            font-family: 'Work Sans';
+        }
+
+        label {
+            color: #4338CA;
+        }
+    </style>
+    <title>SHC Extractor</title>
+</head>
+<body class="bg-gray-50">
+    <div class="bg-white flex flex-col items-center rounded-xl p-8 border-2 max-w-3xl my-8 mx-4 md:mx-auto">
+        <div class="mt-8">
+            {{#if verifications.trustable}}
+                <svg class="mx-auto" width="150" height="150" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M210 105C210 111.709 206.515 117.282 203.44 122.193C201.621 125.103 199.901 127.848 199.256 130.254C198.566 132.846 198.673 136.198 198.789 139.749C198.975 145.45 199.186 151.911 195.941 157.512C192.654 163.196 186.908 166.251 181.84 168.947C178.744 170.592 175.821 172.146 173.986 173.986C172.15 175.825 170.592 178.744 168.947 181.84C166.251 186.908 163.196 192.654 157.512 195.945C151.911 199.186 145.45 198.975 139.749 198.789C136.198 198.673 132.846 198.566 130.254 199.256C127.852 199.901 125.103 201.621 122.193 203.44C117.282 206.515 111.709 210 105 210H104.955L90.3393 101.507L104.955 0H105C111.709 0 117.282 3.48484 122.193 6.56043C125.103 8.37933 127.852 10.099 130.254 10.7439C132.846 11.4343 136.198 11.3268 139.749 11.211C145.45 11.025 151.911 10.8142 157.512 14.0551C163.196 17.3457 166.251 23.0917 168.947 28.1598C170.592 31.2561 172.146 34.1787 173.986 36.0142C175.825 37.8496 178.744 39.4081 181.84 41.0533C186.908 43.7486 192.654 46.8035 195.945 52.4876C199.186 58.089 198.975 64.5502 198.789 70.2508C198.673 73.8018 198.566 77.1543 199.256 79.7463C199.901 82.148 201.621 84.897 203.44 87.8031C206.515 92.7183 210 98.2908 210 105Z" fill="#10B981"/>
+                    <path d="M104.955 0V210C98.2659 209.983 92.7059 206.507 87.8073 203.44C84.8971 201.621 82.148 199.901 79.7463 199.256C77.1543 198.566 73.8018 198.673 70.2508 198.789C64.5502 198.975 58.089 199.186 52.4876 195.945C46.8035 192.654 43.7486 186.908 41.0533 181.84C39.4081 178.744 37.8537 175.821 36.0142 173.986C34.1746 172.15 31.2561 170.592 28.1598 168.947C23.0917 166.251 17.3457 163.196 14.0551 157.512C10.8142 151.911 11.025 145.45 11.211 139.749C11.3268 136.198 11.4343 132.846 10.7439 130.254C10.099 127.852 8.37933 125.103 6.56043 122.197C3.48484 117.282 0 111.709 0 105C0 98.2908 3.48484 92.7183 6.56043 87.8073C8.37933 84.8971 10.099 82.1522 10.7439 79.7463C11.4343 77.1543 11.3268 73.8018 11.211 70.2508C11.025 64.5502 10.8142 58.089 14.0593 52.4876C17.3457 46.8035 23.0917 43.7486 28.1598 41.0533C31.2561 39.4081 34.1787 37.8537 36.0142 36.0142C37.8496 34.1746 39.4081 31.2561 41.0533 28.1598C43.7486 23.0917 46.8035 17.3457 52.4876 14.0551C58.089 10.8142 64.5502 11.025 70.2508 11.211C73.8018 11.3268 77.1543 11.4343 79.7463 10.7439C82.148 10.099 84.8971 8.37933 87.8073 6.56043C92.7059 3.49311 98.2659 0.0165354 104.955 0Z" fill="#10B981"/>
+                    <path d="M183.99 105C183.99 148.554 148.554 183.99 105 183.99H104.955L101.9 179.557L104.955 171.588H105C141.717 171.588 171.588 141.717 171.588 105C171.588 68.2831 141.717 38.4118 105 38.4118H104.955L99.7694 33.39L104.955 26.0102H105C148.554 26.0102 183.99 61.4457 183.99 105V105Z" fill="#FCFCFC"/>
+                    <path d="M142.366 88.0222L104.955 123.937L101.9 117.402L104.955 106.744L133.776 79.0766L142.366 88.0222Z" fill="#FCFCFC"/>
+                    <path d="M104.955 106.744V123.937L93.2929 135.132L67.5431 109.386L76.3152 100.614L93.4707 117.769L104.955 106.744Z" fill="#FCFCFC"/>
+                    <path d="M104.955 38.4118V26.0102C61.4209 26.035 26.0103 61.4622 26.0103 105C26.0103 148.538 61.4209 183.965 104.955 183.99V171.588C68.2583 171.563 38.4118 141.7 38.4118 105C38.4118 68.2996 68.2583 38.4366 104.955 38.4118Z" fill="#FCFCFC"/>
+                </svg>
+
+                <h1 class="text-center font-bold text-2xl mt-6">Health Card Validated</h1>
+                <p class="mb-4 text-gray-500 text-xs mt-1 md:text-base break-all text-center">{{iss}}</p>
+            {{else}}
+                <svg class="mx-auto" width="150" height="150" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="105" cy="105" r="105" fill="#E21D4D"/>
+                    <path d="M188.296 104.783C188.296 150.591 151.026 187.861 105.217 187.861H105.17L101.957 183.198L105.17 174.817H105.217C143.835 174.817 175.252 143.4 175.252 104.783C175.252 66.1652 143.835 34.7478 105.217 34.7478H105.17L99.7161 29.4661L105.17 21.7043H105.217C151.026 21.7043 188.296 58.9739 188.296 104.783V104.783Z" fill="#FCFCFC"/>
+                    <path d="M105.17 34.7478V21.7043C59.3826 21.7304 22.1391 58.9913 22.1391 104.783C22.1391 150.574 59.3826 187.835 105.17 187.861V174.817C66.5739 174.791 35.1826 143.383 35.1826 104.783C35.1826 66.1826 66.5739 34.7739 105.17 34.7478Z" fill="#FCFCFC"/>
+                    <rect x="73.913" y="83.3163" width="13.913" height="74.7826" transform="rotate(-45 73.913 83.3163)" fill="#FCFCFC"/>
+                    <rect x="126.792" y="73.4783" width="13.913" height="74.7826" transform="rotate(45 126.792 73.4783)" fill="#FCFCFC"/>
+                </svg>
+
+                <h1 class="text-center font-bold text-2xl mt-6">Invalid Health Card</h1>
+                <p class="mb-4 mt-2 text-red-500 text-center">This card could not be validated and therefore should not be trusted.</p>
+                <p class="mb-4 mt-1 text-gray-500 text-xs md:text-base break-all text-center">{{iss}}</p>
+            {{/if}}
+        </div>
+
+        {{!-- Patient data --}}
+        <div class="w-full max-w-lg py-4 pb-8 mt-4 mb-4">
+            <h2 class="font-semibold text-xl border-b">Identification</h2>
+
+            <label class="font-semibold mt-4 block">Patient</label>
+            <div>{{patient.name.0.family}}, {{patient.name.0.given}}</div>
+
+            <div class="flex flex-row space-x-10 mt-4">
+                <div>
+                    <label class="font-semibold ">Birth Date</label>
+                    <div>{{patient.birthDate}}</div>
+                </div>
+                {{#if patient.gender}}
+                <div>
+                    <label class="font-semibold">Gender</label>
+                    <div>{{patient.gender}}</div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        {{!-- Immunization data --}}
+        <div class="w-full max-w-lg">
+            <h2 class="font-semibold border-b text-xl">Immunization <span class="bg-indigo-700 text-base text-white rounded-xl px-2 ml-1">{{immunizations.length}}</span></h2>
+
+            {{#each immunizations}}
+            <div class="border-b pb-4">
+                <div class="flex flex-row space-x-10 mt-4">
+                    <div>
+                        <label class="font-semibold">Status</label>
+                        <div>{{this.status}} on {{this.occurrenceDateTime}}</div>
+                    </div>
+                    {{#if this.dose}}
+                    <div>
+                        <label class="font-semibold">Dose</label>
+                        <div>{{this.protocolApplied.doseNumber}}</div>
+                    </div>
+                    {{/if}}
+                </div>
+                {{#if this.location}}
+                <div class="mt-4">
+                    <label class="font-semibold">Location</label>
+                    <div>{{this.location.display}}</div>
+                </div>
+                {{/if}}
+                {{#if this.performer}}
+                <div class="mt-4">
+                    <label class="font-semibold">Location</label>
+                    <div>{{this.performer.0.actor.display}}</div>
+                </div>
+                {{/if}}
+                <div class="flex flex-row space-x-10 mt-4">
+                    <div>
+                        <label class="font-semibold">Vaccine</label>
+                        <div>{{this.note.0.text}} ({{this.vaccineCode.coding.0.code}})</div>
+                    </div>
+                    <div>
+                        <label class="font-semibold">Lot Number</label>
+                        <div>{{this.lotNumber}}</div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <p class="mt-6 text-sm text-gray-500">Verified at {{now}}</p>
+    </div>
+</body>
+</html>

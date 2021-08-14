@@ -42,6 +42,35 @@ The extracted JSON will be saved in `./out`
 
 ---
 
+### :star: NEW : Visualize QR code data in a more friendly way using the Web UI
+
+Why reading a JSON file when you can visualize your QR code data in a cute Web UI?
+
+![screenshot](./sample/web-ui.png)
+
+**How ?**
+
+```
+GET {host}/card?shc={shc-raw-content}
+```
+
+You can try it with the sample QR code (or your own) on the live demo page : https://shc.obrassard.ca/card *(no data is collected or stored by this server)*.
+
+
+:bulb: **Tip** : If you have an iOS device, you can use this shortcut to scan the QR code and quickly open the Web UI : https://www.icloud.com/shortcuts/435d6706c43e45e4a9b78e700bdfcdf8
+
+If you prefer you may use it locally using the following commands :
+
+```
+npm install
+npm start
+
+# Then navigate to :
+GET http://localhost:1234/card?shc=5676290...
+```
+
+---
+
 ### Credits and inspiration :
 
 * https://github.com/dvci/health-cards-walkthrough/blob/main/SMART%20Health%20Cards.ipynb
