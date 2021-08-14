@@ -1,10 +1,4 @@
-/*
-A simple web server that parse shc raw data and return the extracted data
-POST 
-{
-    raw: "shc:/0242130...."
-}
-*/
+// A simple web server that parse shc raw data and return the extracted data
 
 const express = require('express');
 const { parseShc } = require('./parsers');
@@ -15,6 +9,7 @@ const server = express();
 server.use(express.urlencoded({extended: true}));
 server.use(express.json())
 
+/* POST { raw: "shc:/0242130...."} */
 server.post('/', async (req, res) => {
     const shcRawData = req.body.raw;
     if (shcRawData) {

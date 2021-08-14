@@ -1,19 +1,31 @@
 # shc-extractor
 
-Extract the JSON payload from SHC QR Codes (i.e Québec COVID Vaccination QR Codes)
+Extract and validate the JSON payload from SHC QR Codes (i.e Québec COVID Vaccination QR Codes)
 
 ### Introduction
 
-Dans les prochains jours/semaines, les québécois qui seront vaccinées pour la COVID-19 recevront un code QR de la part du gouvernement du Québec. Ces codes QR sont généré avec le protocole Smart Health Cards (https://smarthealth.cards), fonctionnant l'aide de JWT (un système de jeton numérique généralement utilisé pour l'authentification d'APIs). En bref, et sans rentrer dans les details, toutes les données de vaccination nécessaires seront directement encodées en JSON dans le contenu du code QR, puis signées avec une clé secrète. Cela permettra par la suite de valider l'authenticité des données d'un code QR sans qu'il soit nécessaire de conserver une copie des données relatives aux personnes vaccinées sur un quelconque serveur. Or, puisque les données sont disponible dans le payload du code QR, il est possible d'extraire ces données afin de les consulter en plus de verifier leur fiabilité.
+Bientôt, le gouvernement du Québec mettra en place un passport vaccinal utilisant la preuve de vaccaination numérique (le fameux code QR). Ces codes QR sont généré avec le protocole Smart Health Cards (https://smarthealth.cards), fonctionnant l'aide de JWT (un système de jeton numérique généralement utilisé pour l'authentification d'APIs qui permet d'empêcher la falcification des codes QR). En bref, toutes les données de la preuve de vaccination sont directement encodées en JSON dans le contenu du code QR, puis signées avec une clé secrète. Cela permet par la suite de valider l'authenticité des données d'un code QR sans qu'il soit nécessaire de conserver une copie des données relatives aux personnes vaccinées sur un quelconque serveur. Or, puisque les données sont disponible dans le payload du code QR, il est possible d'extraire ces données afin de les consulter et de verifier leur authenticité.
 
-In the coming days/weeks, Quebecers who will be vaccinated for COVID-19 will receive a QR code from the Quebec government. These QR codes are generated with the Smart Health Cards protocol (https://smarthealth.cards), using JWT (a digital token system generally used for API authentication). In short, and without getting into the details, all the relevant immunization data will be directly encoded as JSON in the QR code payload, and then signed with a secret key. This will allow to confirm the authenticity of the QR code content without the need to keep a copy of the vaccination data on any server. Since the data is available in the QR code payload, it is then possible to extract this data in order to review it and ensure its trustworthiness.
+Soon, the Quebec government will deploy a vaccination passport using the digital proof of immunization (the infamous QR code). These QR codes are generated through the Smart Health Cards protocol (https://smarthealth.cards), using JWT (a digital token system generally used for Web API authentication, that prevents QR code forgery). In short, all the relevant immunization data will be directly encoded as JSON in the QR code payload, and then signed with a secret key. This allows to validate the authenticity of the QR code data without the need to keep a copy of the vaccination data on any server. Since the data is available in the QR code payload, it is possible to extract this data in order to review it and verify its trustworthiness.
 
-### Credits and inspiration :
+---
 
-* https://github.com/dvci/health-cards-walkthrough/blob/main/SMART%20Health%20Cards.ipynb
+### ⚠️ Disclaimers
 
-* https://gist.github.com/remi/e3aa2f78845ee13f706ed83aead5145f
+**FR :**
 
+* Ce projet n'est pas affilié au Gouvernement du Québec.
+* Cette application est destinée à des fins éducatives et ne fournit aucune garantie, y compris concernant la validation des données.
+* Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données.
+
+**EN :**
+
+* This project is not affiliated with the Government of Quebec.
+* This app is intended for educational purposes and do not provide any warranty of any kind including data validation.
+* This app cannot be used to collect personal data without the consent of the owner of the QR code data.
+* This app is intended for educational purposes.
+
+---
 
 ## Usage 
 
@@ -29,13 +41,14 @@ Where `'/path/to/the/qrcode.png'` is a path to the QR Code image (in PNG).
 The extracted JSON will be saved in `./out`
 
 ---
-### ⚠️ Disclaimer
 
-**This project, for the moment, is not intended to be a tool to validate the trustworthiness of Quebec Gov. QR codes.**
+### Credits and inspiration :
 
-Indeed, according to the Smart Health Cards standard, the public keys required to validate the trustworthiness of the data should be published at `{issuer}/.well-known/jwks.json` (with `{issuer}` corresponding to the `iss` field in the payload). However, it seems that the government has not published those keys, probably to avoid that anybody starts validating QR codes.
+* https://github.com/dvci/health-cards-walkthrough/blob/main/SMART%20Health%20Cards.ipynb
 
-Knowing this, **it is not an issue** that the server returns `"trustable": false` for QC QR codes since we can't get the keys, we cannot ensure the QR code's data is trustable.
+* https://gist.github.com/remi/e3aa2f78845ee13f706ed83aead5145f
+
+* Spcial thanks to @fproulx, who found the public key that allows validation of Qc Gov. QR Codes.
 
 ---
 

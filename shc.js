@@ -1,19 +1,15 @@
-// Extract JSON payload from SHC QR code
-
-// Credits + inspiration
-// https://github.com/dvci/health-cards-walkthrough/blob/main/SMART%20Health%20Cards.ipynb
-// https://gist.github.com/remi/e3aa2f78845ee13f706ed83aead5145f
-
-// Usage
-// $ node shc.js "/path/to/qrcode.png"
+/*
+* Extract JSON payload from SHC QR code
+* $ node shc.js "/path/to/qrcode.png"
+*/
 
 const fs = require("fs");
 const { nanoid } = require("nanoid");
-const { readQrCode, parseShc } = require("./parsers")
+const { readQrCode, parseShc } = require("./src/parsers")
 
 try {
 	const qrCodeFilePath = process.argv[2]
-	if (!qrCodeFilePath) throw new Error('Please provide the file path to the PNG QR code to decode')
+	if (!qrCodeFilePath) throw new Error('Please provide the file path to the PNG QR code to decode.')
 
 	const qrCodeData = readQrCode(fs.readFileSync(qrCodeFilePath));
 	parseShc(qrCodeData).then(extractedData => {
