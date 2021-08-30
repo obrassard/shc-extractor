@@ -16,14 +16,15 @@ Soon, the Quebec government will deploy a vaccination passport using the digital
 
 * Ce projet n'est pas affilié au Gouvernement du Québec.
 * Cette application est destinée à des fins éducatives et ne fournit aucune garantie, y compris concernant la validation des données.
-* Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données.
+* Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données. De plus, elle n'est pas destinée à des fins de vérifications des preuves de vaccination dans le cadre de l'application de la loi sur le passeport vaccinal au Québec. **Les commerçants doivent utiliser l'application officielle [VaxiCode Verif](https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/deroulement-vaccination-contre-la-covid-19/passeport-de-vaccination-covid-19#c111311) pour valider les codes QR.**
+* Le développeur de cette application se détache de toute responsabilité lié à un usage illégal de l'application par une tierce personne.
 
 **EN :**
 
 * This project is not affiliated with the Government of Quebec.
 * This app is intended for educational purposes and do not provide any warranty of any kind including data validation.
-* This app cannot be used to collect personal data without the consent of the owner of the QR code data.
-* This app is intended for educational purposes.
+* This application should not be used to collect personal data without the consent of the data owner. Furthermore, it cannot be used for verifying proof of vaccination in the context of the law on vaccination passports in the Province of Quebec. **Merchants must use the official application [VaxiCode Verif](https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/deroulement-vaccination-contre-la-covid-19/passeport-de-vaccination-covid-19#c111311) to validate QR codes.**
+* The developer of this application disclaims any responsibility for illegal use of the application by a third party.
 
 ---
 
