@@ -4,12 +4,16 @@
 */
 
 const fs = require("fs");
+const mime = require("mime")
 const { nanoid } = require("nanoid");
 const { readQrCode, parseShc } = require("./src/parsers")
 
 try {
 	const qrCodeFilePath = process.argv[2]
 	if (!qrCodeFilePath) throw new Error('Please provide the file path to the PNG QR code to decode.')
+
+	const mimeType = mime.getType(qrCodeFilePath)
+	if (mimeType !== 'image/png') throw new Error(`${qrCodeFilePath} is detected as ${mimeType}, please convert to image/png`)
 
 	const qrCodeData = readQrCode(fs.readFileSync(qrCodeFilePath));
 	parseShc(qrCodeData).then(extractedData => {
