@@ -44,6 +44,15 @@ const keys = {
 		use: "sig",
 		x: "p9Rf7Wh1_vCMTK4i4XLQFI6_LR0ZhISQVJ2PAy2yEdA",
 		y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY"
+    },
+	"https://www.hss.gov.nt.ca/covax": {
+		kid: "8C-9TNgyGuOqc-3FXyNRq6m5U9S1wyhCS1TvpgjzkoU",
+		alg: "ES256",
+		kty: "EC",
+		crv: "P-256",
+		use: "sig",
+		x: "C-9Lltax_iU6iYdK8DdCZzv4cQN6SFVUG7ACaCT_MKM",
+		y: "_qaENBMJz6iLf1qyYMx2_D6fXxbbNoHbLcfdPF9rUI0",
 	}
 }
 
