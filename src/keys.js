@@ -44,7 +44,7 @@ const keys = {
 		use: "sig",
 		x: "p9Rf7Wh1_vCMTK4i4XLQFI6_LR0ZhISQVJ2PAy2yEdA",
 		y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY"
-    },
+  	},
 	"https://www.hss.gov.nt.ca/covax": {
 		kid: "8C-9TNgyGuOqc-3FXyNRq6m5U9S1wyhCS1TvpgjzkoU",
 		alg: "ES256",
@@ -53,6 +53,15 @@ const keys = {
 		use: "sig",
 		x: "C-9Lltax_iU6iYdK8DdCZzv4cQN6SFVUG7ACaCT_MKM",
 		y: "_qaENBMJz6iLf1qyYMx2_D6fXxbbNoHbLcfdPF9rUI0",
+	},
+	"https://www.gov.nl.ca/covid-19/life-during-covid-19/vaccination-record/prod": {
+		kid: "UboztS3pE1mr0dnG7Rv24kRNqlYbHrbxd-qBFerpZvI",
+		alg: "ES256",
+		kty: "EC",
+		crv: "P-256",
+		use: "sig",
+		x: "mB0PKTVRnr3JCtyucEjCHXkXW3COg5KP0y4gKCNJxWc",
+		y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs"
 	}
 }
 
