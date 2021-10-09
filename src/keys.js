@@ -62,6 +62,15 @@ const keys = {
 		use: "sig",
 		x: "mB0PKTVRnr3JCtyucEjCHXkXW3COg5KP0y4gKCNJxWc",
 		y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs"
+  },
+	"https://covidrecords.alberta.ca/smarthealth/issuer" : {
+		kty:"EC",
+		kid:"JoO-sJHpheZboXdsUK4NtfulfvpiN1GlTdNnXN3XAnM",
+		use:"sig",
+		alg:"ES256",
+		crv:"P-256",
+		x:"GsriV0gunQpl2X9KgrDZ4EDCtIdfOmdzhdlosWrMqKk",
+		y:"S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0"
 	}
 }
 
