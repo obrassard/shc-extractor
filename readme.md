@@ -8,7 +8,7 @@ Bientôt, le gouvernement du Québec mettra en place un passport vaccinal utilis
 
 Soon, the Quebec government will deploy a vaccination passport using the digital proof of immunization (the infamous QR code). These QR codes are generated through the Smart Health Cards protocol (https://smarthealth.cards), using JWT (a digital token system generally used for Web API authentication, that prevents QR code forgery). In short, all the relevant immunization data will be directly encoded as JSON in the QR code payload, and then signed with a secret key. This allows to validate the authenticity of the QR code data without the need to keep a copy of the vaccination data on any server. Since the data is available in the QR code payload, it is possible to extract this data in order to review it and verify its trustworthiness.
 
-#### Now supporting new provinces and territories!
+#### 🇨🇦 Now supporting new provinces and territories! 🇨🇦
 
 SHC-extractor now supports QR codes decoding for the following provinces and territories:
 
