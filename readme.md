@@ -8,20 +8,32 @@ Bientôt, le gouvernement du Québec mettra en place un passport vaccinal utilis
 
 Soon, the Quebec government will deploy a vaccination passport using the digital proof of immunization (the infamous QR code). These QR codes are generated through the Smart Health Cards protocol (https://smarthealth.cards), using JWT (a digital token system generally used for Web API authentication, that prevents QR code forgery). In short, all the relevant immunization data will be directly encoded as JSON in the QR code payload, and then signed with a secret key. This allows to validate the authenticity of the QR code data without the need to keep a copy of the vaccination data on any server. Since the data is available in the QR code payload, it is possible to extract this data in order to review it and verify its trustworthiness.
 
+#### Now supporting new provinces and territories!
+
+SHC-extractor now supports QR codes decoding for the following provinces and territories:
+
+* Québec
+* British Columbia
+* Saskatchewan
+* Alberta
+* Newfoundland and Labrador
+* Northwest Territories
+* Yukon
+
 ---
 
 ### ⚠️ Disclaimers
 
 **FR :**
 
-* Ce projet n'est pas affilié au Gouvernement du Québec.
+* Ce projet n'est pas affilié au Gouvernement du Québec, ni à aucun gouvernement de Province ou Territoire canadien.
 * Cette application est destinée à des fins éducatives et ne fournit aucune garantie, y compris concernant la validation des données.
 * Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données. De plus, elle n'est pas destinée à des fins de vérifications des preuves de vaccination dans le cadre de l'application de la loi sur le passeport vaccinal au Québec. **Les commerçants doivent utiliser l'application officielle [VaxiCode Verif](https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/deroulement-vaccination-contre-la-covid-19/passeport-de-vaccination-covid-19#c111311) pour valider les codes QR.**
 * Le développeur de cette application se détache de toute responsabilité lié à un usage illégal de l'application par une tierce personne.
 
 **EN :**
 
-* This project is not affiliated with the Government of Quebec.
+* This project is not affiliated with the Government of Quebec, nor any other government of canadian province or territory.
 * This app is intended for educational purposes and do not provide any warranty of any kind including data validation.
 * This application should not be used to collect personal data without the consent of the data owner. Furthermore, it cannot be used for verifying proof of vaccination in the context of the law on vaccination passports in the Province of Quebec. **Merchants must use the official application [VaxiCode Verif](https://www.quebec.ca/sante/problemes-de-sante/a-z/coronavirus-2019/deroulement-vaccination-contre-la-covid-19/passeport-de-vaccination-covid-19#c111311) to validate QR codes.**
 * The developer of this application disclaims any responsibility for illegal use of the application by a third party.
@@ -78,7 +90,7 @@ GET http://localhost:1234/card?shc=5676290...
 
 * https://gist.github.com/remi/e3aa2f78845ee13f706ed83aead5145f
 
-* Spcial thanks to @fproulx, who found the public key that allows validation of Qc Gov. QR Codes.
+* Special thanks to @fproulx, who found the public key that allows validation of Qc Gov. QR Codes.
 
 ---
 
