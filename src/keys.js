@@ -86,6 +86,17 @@ const keys = {
 		crv: "P-256",
 		x: "GsriV0gunQpl2X9KgrDZ4EDCtIdfOmdzhdlosWrMqKk",
 		y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0"
+	},
+	
+	// Nova Scotia
+	"https://pvc.novascotia.ca/issuer": {
+		kid: "UJrT9jU8vOCUl4xsI1RZjOPP8hFUv7n9mhVtolqH9qw",
+		kty: "EC",
+		use: "sig",
+		alg: "ES256",
+		crv: "P-256",
+		x: "kIaIeOhhxpiN13sDs6RKVzCpvxxObI9adKF5YEmKngM",
+		y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ"
 	}
 }
 
