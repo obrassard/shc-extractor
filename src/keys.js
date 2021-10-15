@@ -10,7 +10,7 @@ const keys = {
 		x: "XSxuwW_VI_s6lAw6LAlL8N7REGzQd_zXeIVDHP_j_Do",
 		y: "88-aI4WAEl4YmUpew40a9vq_w5OcFvsuaKMxJRLRLL0",
 	},
-	
+
 	// British Columbia
 	"https://smarthealthcard.phsa.ca/v1/issuer": {
 		kid: "XCqxdhhS7SWlPqihaUXovM_FjU65WeoBFGc_ppent0Q",
@@ -87,7 +87,7 @@ const keys = {
 		x: "GsriV0gunQpl2X9KgrDZ4EDCtIdfOmdzhdlosWrMqKk",
 		y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0"
 	},
-	
+
 	// Nova Scotia
 	"https://pvc.novascotia.ca/issuer": {
 		kid: "UJrT9jU8vOCUl4xsI1RZjOPP8hFUv7n9mhVtolqH9qw",
@@ -98,6 +98,17 @@ const keys = {
 		x: "kIaIeOhhxpiN13sDs6RKVzCpvxxObI9adKF5YEmKngM",
 		y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ"
 	}
+
+	// Ontario
+	"https://prd.pkey.dhdp.ontariohealth.ca": {
+		kid: "Nlgwb6GUrU_f0agdYKc77sXM9U8en1gBu94plufPUj8",
+		kty: "EC",
+		use: "sig",
+		alg: "ES256",
+		crv: "P-256",
+		x: "ibapbMkHMlkR3D-AU0VTFDsiidQ49oD9Ha7VY8Gao3s",
+		y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw"
+	},
 }
 
 module.exports = {
