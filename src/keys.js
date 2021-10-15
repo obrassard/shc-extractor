@@ -97,6 +97,17 @@ const keys = {
 		crv: "P-256",
 		x: "kIaIeOhhxpiN13sDs6RKVzCpvxxObI9adKF5YEmKngM",
 		y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ"
+	},
+	
+	// Ontario
+	"https://prd.pkey.dhdp.ontariohealth.ca": {
+		kty: "EC",
+		kid: "Nlgwb6GUrU_f0agdYKc77sXM9U8en1gBu94plufPUj8",
+		use: "sig",
+		alg: "ES256",
+		crv: "P-256",
+		x: "ibapbMkHMlkR3D-AU0VTFDsiidQ49oD9Ha7VY8Gao3s",
+		y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw"
 	}
 }
 

@@ -18,6 +18,7 @@ SHC-extractor now supports QR codes decoding for the following provinces and ter
 * Alberta
 * Newfoundland and Labrador
 * Nova Scotia
+* Ontario
 * Northwest Territories
 * Yukon
 
