@@ -31,7 +31,7 @@ SHC-extractor now supports QR codes decoding for the following provinces and ter
 
 * Ce projet n'est pas affilié au Gouvernement du Québec, ni à aucun gouvernement de Province ou Territoire canadien.
 * Cette application est destinée à des fins éducatives et ne fournit aucune garantie, y compris concernant la validation des données.
-* Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données. En outre, elle ne doit pas être utilisée à des fins de vérification des preuves vaccinales dans le cadre de la loi sur les passeports de vaccination dans une province ou un territoire canadien. **Les commerçants doivent utiliser l'application officielle à leur disposition dans leur juridiction.**
+* Cette application ne doit pas être utilisée pour recueillir des données personnelles sans le consentement du propriétaire des données. En outre, elle ne doit pas être utilisée à des fins de vérification des preuves vaccinales dans le cadre de la loi sur les passeports de vaccination dans une province ou un territoire canadien. **Les commerçants doivent utiliser l'application officielle mise à leur disposition dans leur juridiction.**
 * Le développeur de cette application se détache de toute responsabilité lié à un usage illégal de l'application par une tierce personne.
 
 **EN :**
