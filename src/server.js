@@ -18,6 +18,11 @@ server.set('views', path.join(__dirname, './views'));
 server.engine('hbs', exphbs({ extname: '.hbs', defaultLayout: false }));
 server.set('view engine', 'hbs');
 
+/* GET / */
+server.get('/', async (_, res) => {
+    res.render('reader');
+});
+
 /* GET /card?shc=0242130.... */
 server.get('/card', async (req, res) => {
     const shcRawData = req.query.shc;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-size: 15px;
+        }
+        * {
+            font-family: 'Work Sans';
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        video {
+          width: 100%    !important;
+          height: 100%   !important;
+        }
+    </style>
+    <title>SHC Extractor</title>
+</head>
+<body class="bg-gray-50">
+    <div class="bg-white flex flex-col items-center rounded-xl p-6 border-2 max-w-3xl my-8 mx-4 md:mx-auto">
+      <h2>Please scan your Smart Health Card<h2>
+      <video id="video"></video>
+    </div>    
+</body>
+</html>
+
+<script type="text/javascript" src="https://unpkg.com/@zxing/library@0.17.1"></script>
+<script>
+  navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
+    /* Try to access to the camera */
+  }).catch((err) => {
+    alert('An error has occurred: The camera could not be initialized... Please check your browser\'s permissions.');
+  });
+
+  const codeReader = new ZXing.BrowserQRCodeReader();
+  codeReader.decodeFromVideoDevice(null, 'video', (result, err) => {
+    if (result) {
+      var shc = result.text.substring(5);
+      if(shc === 'shc:/') {
+        window.location.href = '/card?shc=' + shc;
+      }
+    }
+  });
+</script>
