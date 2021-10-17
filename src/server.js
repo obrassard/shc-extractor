@@ -12,10 +12,11 @@ const port = process.env.PORT || 1234
 const server = express();
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json())
+server.use(express.static(path.join(__dirname, './public')));
 
 // Setup hbs for views
 server.set('views', path.join(__dirname, './views'));
-server.engine('hbs', exphbs({ extname: '.hbs', defaultLayout: false }));
+server.engine('hbs', exphbs({ extname: '.hbs', defaultLayout: 'main' }));
 server.set('view engine', 'hbs');
 
 /* GET / */
