@@ -44,8 +44,8 @@
   const codeReader = new ZXing.BrowserQRCodeReader();
   codeReader.decodeFromVideoDevice(null, 'video', (result, err) => {
     if (result) {
-      var shc = result.text.substring(5);
-      if(shc === 'shc:/') {
+      if(result.text.substring(0, 5) === 'shc:/') {
+        var shc = result.text.substring(5);
         window.location.href = '/card?shc=' + shc;
       }
     }
