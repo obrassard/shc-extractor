@@ -70,10 +70,10 @@ Why reading a JSON file when you can visualize your QR code data in a cute Web U
 GET {host}/card?shc={shc-raw-content}
 ```
 
-You can try it with the sample QR code (or your own) on the live demo page : https://shc.obrassard.ca/card *(no data is collected or stored by this server)*.
+You can try it with the sample QR code (or your own) on the live demo page : https://shc.obrassard.ca *(no data is collected or stored by this server)*. On the main page, you'll be prompted to scan a QR code to decode.
 
 
-:bulb: **Tip** : If you have an iOS device, you can use this shortcut to scan the QR code and quickly open the Web UI : https://www.icloud.com/shortcuts/435d6706c43e45e4a9b78e700bdfcdf8
+:bulb: **Tip** : If you have an iOS device, you can also use this shortcut to scan the QR code and quickly open the Web UI : https://www.icloud.com/shortcuts/435d6706c43e45e4a9b78e700bdfcdf8
 
 If you prefer you may use it locally using the following commands :
 
@@ -82,8 +82,10 @@ npm install
 npm start
 
 # Then navigate to :
-GET http://localhost:1234/card?shc=5676290...
+GET http://localhost:1234/
 ```
+
+> Note that some browsers may not let you access the camera if you are not using https.
 
 ---
 
