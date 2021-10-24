@@ -88,38 +88,46 @@ function parseJwtPayload(payload) {
 async function verifySignature(jwt, issuer) {
 	try {
 		const keys = await getKeys(issuer)
-		const result = await jose.JWS.createVerify(keys).verify(jwt)
+		const result = await jose.JWS.createVerify(keys.keys).verify(jwt)
 		
 		return {
 			trustable: true,
 			verifiedBy: result.key.kid,
-			origin: issuer
+			origin: issuer,
+			isFromCache: keys.isFromCache
 		}
 	} catch (err) {
 		console.log(err.message)
 		return {
-			trustable: false
+			trustable: false,
+			isFromCache: keys.isFromCache
 		}
 	}
 }
 
 /**
  * Get the public keys of the given issuer.
- * We try to get the keys from the cache  first,
+ * We try to get the keys from the cache first,
  * if not found, we fetch them from the issuer.
  *
  * @param {string} issuer Issuer of the JWT to verify
- * @return {Promise<jose.JWK.Key | jose.JWK.KeyStore>} Key or keystore from the issuer
+ * @return {{keys: jose.JWK.Key | jose.JWK.KeyStore, isFromCache: boolean}} Key or keystore from the issuer
  */
 async function getKeys(issuer) {
 	if (keys[issuer]) {
 		const key = keys[issuer];
-		return jose.JWK.asKey(key)
+		return {
+			keys: await jose.JWK.asKey(key),
+			isFromCache: true,
+		}
 	} else {
 		// Fetch keys from the issuer if available
 		const response = await axios.get(`${issuer}/.well-known/jwks.json`)
 		const jwks = response.data;
-		return jose.JWK.asKeyStore(jwks)
+		return {
+			keys: await jose.JWK.asKeyStore(jwks),
+			isFromCache: false,
+		}
 	}
 }
 
