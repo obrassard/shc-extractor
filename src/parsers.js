@@ -82,7 +82,7 @@ function parseJwtPayload(payload) {
  * using the public key of the issuer.
  *
  * @param {string} jwt JWT to verify
- * @param {string} issuer The expexted issuer of the JWT
+ * @param {string} issuer The expected issuer of the JWT
  * @return The verification result  
  */
 async function verifySignature(jwt, issuer) {

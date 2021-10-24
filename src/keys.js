@@ -10,7 +10,7 @@ const keys = {
 		x: "XSxuwW_VI_s6lAw6LAlL8N7REGzQd_zXeIVDHP_j_Do",
 		y: "88-aI4WAEl4YmUpew40a9vq_w5OcFvsuaKMxJRLRLL0",
 	},
-	
+
 	// British Columbia
 	"https://smarthealthcard.phsa.ca/v1/issuer": {
 		kid: "XCqxdhhS7SWlPqihaUXovM_FjU65WeoBFGc_ppent0Q",
@@ -19,7 +19,7 @@ const keys = {
 		crv: "P-256",
 		use: "sig",
 		x: "xscSbZemoTx1qFzFo-j9VSnvAXdv9K-3DchzJvNnwrY",
-		y: "jA5uS5bz8R2nxf_TU-0ZmXq6CKWZhAG1Y4icAx8a9CA"
+		y: "jA5uS5bz8R2nxf_TU-0ZmXq6CKWZhAG1Y4icAx8a9CA",
 	},
 
 	// Yukon
@@ -30,7 +30,7 @@ const keys = {
 		crv: "P-256",
 		use: "sig",
 		x: "wCeT9rdLYTpOK52OK0-oRbwDxbljJdNiDuxPsPt_1go",
-		y: "IgFPi1OrHtJWJGwPMvlueeHmULUKEpScgpQtoHNjX-Q"
+		y: "IgFPi1OrHtJWJGwPMvlueeHmULUKEpScgpQtoHNjX-Q",
 	},
 
 	// Saskatchewan
@@ -41,7 +41,7 @@ const keys = {
 		crv: "P-256",
 		use: "sig",
 		x: "Hk4ktlNfoIIo7jp5I8cefp54Ils3TsKvKXw_E9CGIPE",
-		y: "7hVieFGuHJeaNRCxVgKeVpoxDJevytgoCxqVZ6cfcdk"
+		y: "7hVieFGuHJeaNRCxVgKeVpoxDJevytgoCxqVZ6cfcdk",
 	},
 
 	// Saskatchewan
@@ -52,7 +52,7 @@ const keys = {
 		crv: "P-256",
 		use: "sig",
 		x: "p9Rf7Wh1_vCMTK4i4XLQFI6_LR0ZhISQVJ2PAy2yEdA",
-		y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY"
+		y: "ai71citYuk72ldpGiwRZ0NfZGJPzKZBVulaUv_74IjY",
 	},
 
 	// Northwest Territories
@@ -74,32 +74,43 @@ const keys = {
 		crv: "P-256",
 		use: "sig",
 		x: "mB0PKTVRnr3JCtyucEjCHXkXW3COg5KP0y4gKCNJxWc",
-		y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs"
+		y: "PTpxiYECNiuyRwpwqjme8OIFdG7N-HwN2XH02phdZCs",
 	},
 
 	//Alberta
 	"https://covidrecords.alberta.ca/smarthealth/issuer": {
-		kty: "EC",
 		kid: "JoO-sJHpheZboXdsUK4NtfulfvpiN1GlTdNnXN3XAnM",
-		use: "sig",
 		alg: "ES256",
+		kty: "EC",
 		crv: "P-256",
+		use: "sig",
 		x: "GsriV0gunQpl2X9KgrDZ4EDCtIdfOmdzhdlosWrMqKk",
-		y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0"
+		y: "S99mZMCcJRsn662RaAmk_elvGiUs8IvSA7qBh04kaw0",
 	},
-	
+
 	// Nova Scotia
 	"https://pvc.novascotia.ca/issuer": {
 		kid: "UJrT9jU8vOCUl4xsI1RZjOPP8hFUv7n9mhVtolqH9qw",
-		kty: "EC",
-		use: "sig",
 		alg: "ES256",
+		kty: "EC",
 		crv: "P-256",
+		use: "sig",
 		x: "kIaIeOhhxpiN13sDs6RKVzCpvxxObI9adKF5YEmKngM",
-		y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ"
-	}
+		y: "AZPQ7CHd3UHp0i4a4ua1FhIq8SJ__BuHgDESuK3A_zQ",
+	},
+
+	// Ontario
+	"https://prd.pkey.dhdp.ontariohealth.ca": {
+		kid: "Nlgwb6GUrU_f0agdYKc77sXM9U8en1gBu94plufPUj8",
+		alg: "ES256",
+		kty: "EC",
+		crv: "P-256",
+		use: "sig",
+		x: "ibapbMkHMlkR3D-AU0VTFDsiidQ49oD9Ha7VY8Gao3s",
+		y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw",
+	},
 }
 
 module.exports = {
-	keys
+	keys,
 }
