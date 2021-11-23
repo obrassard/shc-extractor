@@ -6,6 +6,8 @@
 
 > 🚩The purpose of this project is SHC decoding. **Please do not ask me to generate custom QR codes from a JSON file.** It won't work since the signature of custom QR codes won't be accepted by official validation apps.
 
+For more information please refer to [FAQ about shc-extractor](https://github.com/obrassard/shc-extractor/discussions/26).
+
 ---
 
 ### Introduction
