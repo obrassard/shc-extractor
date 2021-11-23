@@ -1,6 +1,12 @@
 # shc-extractor
 
-Extract and validate the JSON payload from SHC QR Codes (i.e Québec COVID Vaccination QR Codes)
+## Extract and validate the JSON payload from SMART Health Cards QR Codes.
+
+> 🚩 L'objectif de ce projet est le décodage des SHC. **S'il vous plait, ne me sollicitez pas pour générer des codes QR personnalisés à partir d'un fichier JSON.** Cela ne fonctionnera pas car la signature des codes QR personnalisés ne sera pas vérifiée par les applications de validation officielles
+
+> 🚩The purpose of this project is SHC decoding. **Please do not ask me to generate custom QR codes from a JSON file.** It won't work since the signature of custom QR codes won't be accepted by official validation apps.
+
+---
 
 ### Introduction
 
