@@ -30,6 +30,7 @@ SHC-extractor now supports QR codes decoding for the following provinces and ter
 * Ontario
 * Northwest Territories
 * Yukon
+* New Brunswick/Nouveau-Brunswick
 
 ---
 
