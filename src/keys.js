@@ -109,6 +109,17 @@ const keys = {
 		x: "ibapbMkHMlkR3D-AU0VTFDsiidQ49oD9Ha7VY8Gao3s",
 		y: "arXU5frZGOvTZpvg045rHC7y0fqVOS3dKqJbUYhW5gw",
 	},
+
+	// New Brunswick/Nouveau-Brunswick
+	"https://www.gnb.ca/smarthealth/.well-known/jwks.json": {
+		kid: "B-13oSlY74FwGHFRZCJ3ND4cnvoejR8szT-GaZd6RgY",
+		alg: "ES256",
+		kty: "EC",
+		crv: "P-256",
+		use: "sig",
+		x: "k6dOuyy-84IA5Qm6qcqff8_3VGu0_MuC9OEEoZS84AA",
+		y: "ViApMHkhltp4gVwzSIJuEZiO6QFpVgpo01pzpbmdSZQ",
+	},
 }
 
 module.exports = {
