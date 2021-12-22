@@ -1,0 +1,22 @@
+name: Deploy to Dokku
+on:
+  push:
+    branches:
+    - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs # Optional step 
+        uses: styfle/cancel-workflow-action@0.4.0
+        with:
+          access_token: ${{ github.token }}
+      - name: Cloning repo 
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 
+      - name: Push to dokku
+        uses: obrassard/action-dokku-deploy@develop
+        with:
+         dokku_repo: ${{ secrets.DOKKU_REPO }}
+         ssh_key: ${{ secrets.PRIVATE_KEY }}
