@@ -18,7 +18,7 @@
     "express-handlebars": "^5.3.3",
     "jsqr": "^1.4.0",
     "mime": "^2.5.2",
-    "nanoid": "^3.1.23",
+    "nanoid": "^3.1.31",
     "node-jose": "^2.0.0",
     "pngjs": "^6.0.0",
     "zlib": "^1.0.5"
