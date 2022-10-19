@@ -114,20 +114,23 @@ async function verifySignature(jwt, issuer) {
  * @return {{keys: jose.JWK.Key | jose.JWK.KeyStore, isFromCache: boolean}} Key or keystore from the issuer
  */
 async function getKeys(issuer) {
-	if (keys[issuer]) {
-		const key = keys[issuer];
-		return {
-			keys: await jose.JWK.asKey(key),
-			isFromCache: true,
-		}
-	} else {
-		// Fetch keys from the issuer if available
+	try {
 		const response = await axios.get(`${issuer}/.well-known/jwks.json`)
 		const jwks = response.data;
 		return {
 			keys: await jose.JWK.asKeyStore(jwks),
 			isFromCache: false,
 		}
+	} catch (e) {
+		console.log(e.message)
+		// Try fetching keys from the cache
+		if (keys[issuer]) {
+			const key = keys[issuer];
+			return {
+				keys: await jose.JWK.asKey(key),
+				isFromCache: true,
+			}
+		} 
 	}
 }
 
