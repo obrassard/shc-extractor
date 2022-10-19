@@ -10,7 +10,7 @@
   "repository": "https://github.com/obrassard/shc-extractor",
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=16.0.0 <17.0.0"
   },
   "dependencies": {
     "axios": "^0.21.4",
