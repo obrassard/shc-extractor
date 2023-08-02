@@ -16,7 +16,9 @@ jobs:
         with:
           fetch-depth: 0 
       - name: Push to dokku
-        uses: obrassard/action-dokku-deploy@develop
+        uses: obrassard/action-dokku-deploy@cloudflared
         with:
-         dokku_repo: ${{ secrets.DOKKU_REPO }}
-         ssh_key: ${{ secrets.PRIVATE_KEY }}
+          dokku_repo: ${{ secrets.DOKKU_REPO }}
+          ssh_key: ${{ secrets.PRIVATE_KEY }}
+          cloudflared_client_id: ${{ secrets.CLOUDFLARED_CLIENT_ID }}
+          cloudflared_client_secret: ${{ secrets.CLOUDFLARED_CLIENT_SECRET }}
