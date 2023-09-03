@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^5.3.3",
     "jsqr": "^1.4.0",
     "mime": "^2.5.2",
